@@ -8,6 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -23,7 +24,13 @@ module.exports = {
     'react/jsx-uses-vars': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'prettier/prettier': [
+      'error',
+      {},
+      {
+        usePrettierrc: true,
+      },
+    ],
     'import/no-unresolved': 'off',
     'import/order': [
       'error',
@@ -52,14 +59,31 @@ module.exports = {
       },
     ],
     'no-console': 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
-    'import/extensions': ['error', 'never', { png: 'always' }],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.tsx', '.jsx'],
+      },
+    ],
+    'import/extensions': [
+      'error',
+      'never',
+      {
+        png: 'always',
+      },
+    ],
     'import/prefer-default-export': 'off',
-    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+    'no-plusplus': [
+      'error',
+      {
+        allowForLoopAfterthoughts: true,
+      },
+    ],
     'react/display-name': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
   env: {
     browser: true,
     node: true,
-  }
+  },
 };
