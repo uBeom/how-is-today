@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate",
+  "name": "how-is-today",
   "version": "1.0.0",
-  "description": "react-boilerplate",
+  "description": "how is today?",
   "main": "index.tsx",
   "scripts": {
     "start": "webpack serve --env=dev",
@@ -10,17 +10,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "keywords": [
-    "react",
-    "typescript",
-    "styled-components",
-    "webpack",
-    "babel",
-    "eslint",
-    "prettier",
-    "json-server",
-    "storybook"
-  ],
+  "keywords": [],
   "author": "ubeom",
   "license": "ISC",
   "devDependencies": {
