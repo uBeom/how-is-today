@@ -5,9 +5,10 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 
-import App from '@/App';
+import App from './App';
+
 import store from '@/module/store';
-import GlobalStyles from '@/styles/globalStyles';
+import GlobalStyle from '@/styles/globalStyle';
 import theme from '@/styles/theme';
 
 const root = ReactDOM.createRoot(
@@ -17,7 +18,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
+      <GlobalStyle />
       <BrowserRouter>
         <Provider store={store}>
           <App />
