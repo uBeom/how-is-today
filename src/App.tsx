@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import Practice from './components/Practice';
+import Router from '@/router';
 
 const queryClinet = new QueryClient();
 
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClinet}>
       <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
-      <Practice label='asdsad' isActive />
+      <Router />
     </QueryClientProvider>
   );
 };
