@@ -137,7 +137,7 @@ const setLetterSpacing = (
 };
 
 /* color: ${setColor(theme, color)}; */
-const Text = css<IText>`
+const TextStyle = css<IText>`
   ${({ theme, fontWeight, fontSize, lineHeight, letterSpacing }) => css`
     font-weight: ${setFontWeight(theme, fontWeight)};
     font-size: ${setFontSize(theme, fontSize)};
@@ -146,4 +146,4 @@ const Text = css<IText>`
   `}
 `;
 
-export default Text;
+export default TextStyle;

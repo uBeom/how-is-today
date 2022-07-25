@@ -11,7 +11,7 @@ export const Container = styled.header`
   `}
 `;
 
-export const Nav = styled.nav`
+export const GNB = styled.nav`
   padding: 4.705882352941176% 3.137254901960784%;
 
   ${({ theme: { colors } }) => css`
@@ -20,4 +20,4 @@ export const Nav = styled.nav`
   `}
 `;
 
-export const GNB = styled.ul``;
+export const GNBList = styled.ul``;
