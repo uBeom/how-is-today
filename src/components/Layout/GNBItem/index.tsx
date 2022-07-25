@@ -1,15 +1,19 @@
-import { Link } from 'react-router-dom';
-
+/* eslint-disable import/extensions */
 import * as S from './style';
+import { IGNBItem } from './type';
 
-const GNBItem = ({ text }: { text: string }) => {
+const GNBItem = ({ name, src }: IGNBItem) => {
   return (
     <S.Item
       fontWeight='medium'
       fontSize='md'
       lineHeight='tall'
       letterSpacing='wide'>
-      <Link to='/'>{text}</Link>
+      <S.NLink
+        to={src}
+        className={({ isActive }) => (isActive ? 'active' : undefined)}>
+        {name}
+      </S.NLink>
     </S.Item>
   );
 };

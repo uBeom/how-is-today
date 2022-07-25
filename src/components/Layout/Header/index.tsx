@@ -1,18 +1,16 @@
 import GNBItem from '../GNBItem';
 import * as S from './style';
 
-import { GNB } from '@/constants/GNB';
+import { GNB } from '@/mocks/gnb';
 
 const Header = () => {
-  const gnbItems = GNB.map((gnbItem, index) => (
-    <GNBItem text={gnbItem} key={index} />
-  ));
+  const gnbItems = GNB.map((info, index) => <GNBItem {...info} key={index} />);
 
   return (
     <S.Container>
-      <S.Nav>
-        <S.GNB>{gnbItems}</S.GNB>
-      </S.Nav>
+      <S.GNB>
+        <S.GNBList>{gnbItems}</S.GNBList>
+      </S.GNB>
     </S.Container>
   );
 };
