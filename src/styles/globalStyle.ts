@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  svg {
+    fill: ${({ theme: { colors } }) => colors.gray[200]}
+  }
 `;
 
 export default GlobalStyle;

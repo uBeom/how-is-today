@@ -1,7 +1,9 @@
 import * as S from './style';
 import { IGNBItem } from './type';
 
-import HouseIcon from '@/assets/icons/HouseIcon';
+import HomeIcon from '@/assets/icons/Header/HomeIcon';
+import SettingsIcon from '@/assets/icons/Header/SettingsIcon';
+import TodoIcon from '@/assets/icons/Header/TodoIcon';
 import { GNB_MOCK } from '@/mocks/gnb';
 
 const GNBItem = ({ name, src }: IGNBItem) => {
@@ -14,7 +16,6 @@ const GNBItem = ({ name, src }: IGNBItem) => {
       <S.NLink
         to={src}
         className={({ isActive }) => (isActive ? 'active' : undefined)}>
-        <HouseIcon width='30' height='30' />
         {name}
       </S.NLink>
     </S.Item>

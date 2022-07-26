@@ -33,10 +33,15 @@ const ItemStyle = css`
   `}
 `;
 
+const SvgStyle = css`
+  ${({ theme: { colors } }) => css`
+    fill: ${colors.blue[600]};
+  `}
+`;
+
 export const Item = styled.li`
   ${TextStyle};
   padding-bottom: 3.137254901960784%;
-  text-align: center;
 
   &:last-child {
     padding-bottom: 0;
@@ -44,14 +49,23 @@ export const Item = styled.li`
 
   & .active {
     ${ItemStyle};
+
+    svg {
+      ${SvgStyle}
+    }
   }
 `;
 
 export const NLink = styled(NavLink)`
   padding: 4.602510460251046% 3.347280334728033%;
-  display: block;
+  display: flex;
+  align-items: center;
 
   &:hover {
     ${ItemStyle};
+
+    svg {
+      ${SvgStyle}
+    }
   }
 `;
