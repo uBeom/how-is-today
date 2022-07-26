@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
-import Header from './Header';
 import * as S from './style';
+
+import Header from '@/components/Header';
 
 const Layout = () => {
   return (
