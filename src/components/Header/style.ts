@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import styled, { css } from 'styled-components';
 
-import TextStyle from '@/styles/text';
+import TextStyle from '@/styles/util/text';
 
 export const Container = styled.header`
   padding-top: 10.83333333333333%;
@@ -28,6 +28,7 @@ export const GNBList = styled.ul``;
 
 const ItemStyle = css`
   border-radius: 4px;
+
   ${({ theme: { colors } }) => css`
     background-color: ${colors.gray[400]};
     color: ${colors.blue[600]};
@@ -39,7 +40,6 @@ const SvgStyle = css`
     fill: ${colors.blue[600]};
   `}
 `;
-
 export const Item = styled.li`
   ${TextStyle};
   padding-bottom: 3.137254901960784%;

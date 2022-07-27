@@ -5,6 +5,22 @@ export interface IText {
   letterSpacing: string;
 }
 
+export interface IBColor {
+  bColor: string;
+}
+
+export interface ITemp {
+  fontWeight: string;
+  fontSize: string;
+  lineHeight: string;
+  letterSpacing: string;
+  bColor: string;
+}
+
+export interface ITColor {
+  tColor: string;
+}
+
 export interface IColors {
   blue: {
     50: string;
