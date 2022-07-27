@@ -27,6 +27,7 @@ export const GNB = styled.nav`
 export const GNBList = styled.ul``;
 
 const ItemStyle = css`
+  border-radius: 4px;
   ${({ theme: { colors } }) => css`
     background-color: ${colors.gray[400]};
     color: ${colors.blue[600]};
@@ -51,7 +52,7 @@ export const Item = styled.li`
     ${ItemStyle};
 
     svg {
-      ${SvgStyle}
+      ${SvgStyle};
     }
   }
 `;
@@ -65,7 +66,7 @@ export const NLink = styled(NavLink)`
     ${ItemStyle};
 
     svg {
-      ${SvgStyle}
+      ${SvgStyle};
     }
   }
 `;
