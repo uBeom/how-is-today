@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
-const GlobalStyles = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   ${reset}
 
   html {
@@ -11,7 +11,16 @@ const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box !important;
     font-family: 'Noto Sans KR', sans-serif !important;
+    color: ${({ theme: { colors } }) => colors.gray[200]}
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  svg {
+    fill: ${({ theme: { colors } }) => colors.gray[200]}
   }
 `;
 
-export default GlobalStyles;
+export default GlobalStyle;

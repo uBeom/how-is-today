@@ -15,14 +15,6 @@ module.exports = {
     modules: ['node_modules'],
     extensions: ['.js', '.ts', '.jsx', '.tsx'],
   },
-  module: {
-    rules: [
-      {
-        test: /\.(jpe?g|png|gif|mp3|svg|webg)$/,
-        use: ['file-loader'],
-      },
-    ],
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve('public', './index.html'),
