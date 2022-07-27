@@ -1,12 +1,9 @@
 import * as S from './style';
 import { IGNBItem } from './type';
 
-import HomeIcon from '@/assets/icons/Header/HomeIcon';
-import SettingsIcon from '@/assets/icons/Header/SettingsIcon';
-import TodoIcon from '@/assets/icons/Header/TodoIcon';
 import { GNB_MOCK } from '@/mocks/gnb';
 
-const GNBItem = ({ name, src }: IGNBItem) => {
+const GNBItem = ({ name, src, icon }: IGNBItem) => {
   return (
     <S.Item
       fontWeight='medium'
@@ -16,6 +13,7 @@ const GNBItem = ({ name, src }: IGNBItem) => {
       <S.NLink
         to={src}
         className={({ isActive }) => (isActive ? 'active' : undefined)}>
+        {icon}
         {name}
       </S.NLink>
     </S.Item>
@@ -26,7 +24,7 @@ const Header = () => {
   const gnbItems = GNB_MOCK.map((info, index) => (
     <GNBItem {...info} key={index} />
   ));
-
+  console.log(gnbItems);
   return (
     <S.Container>
       <S.GNB>

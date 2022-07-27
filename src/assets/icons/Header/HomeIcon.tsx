@@ -1,6 +1,5 @@
 import * as S from './style';
 
-// const HomeIcon = ({ width, height }: { width: string; height: string }) => {
 const HomeIcon = () => {
   return (
     // Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com
