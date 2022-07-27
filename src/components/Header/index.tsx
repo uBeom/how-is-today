@@ -24,7 +24,7 @@ const Header = () => {
   const gnbItems = GNB_MOCK.map((info, index) => (
     <GNBItem {...info} key={index} />
   ));
-  console.log(gnbItems);
+
   return (
     <S.Container>
       <S.GNB>
