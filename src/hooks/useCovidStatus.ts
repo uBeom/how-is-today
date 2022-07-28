@@ -1,27 +1,29 @@
 import { useQuery } from '@tanstack/react-query';
-import xml2js from 'xml2js';
 
-const COVID_STATUS_URL = `http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?ServiceKey=${process.env.REACT_APP_CORONA_STATUS}`;
-const fetchCovidStatus = async () => {
-  let jsonData;
+interface IUseCovidStatus {
+  cnt_confirmations: string;
+  cnt_deaths: string;
+  cnt_hospitalizations: string;
+  cnt_severe_symptoms: string;
+  mmddhh: string;
+  rate_confirmations: string;
+  rate_deaths: string;
+  rate_hospitalizations: string;
+  rate_severe_symptoms: string;
+}
 
+const COVID_STATUS_URL = `http://apis.data.go.kr/1790387/covid19CurrentStatusKorea/covid19CurrentStatusKoreaJason?serviceKey=${process.env.REACT_APP_CORONA_STATUS}`;
+const fetchCovidStatus = async (): Promise<IUseCovidStatus> => {
   const res = await fetch(COVID_STATUS_URL);
-  const data = await res.text();
-  const parser = new xml2js.Parser();
-  parser.parseString(data, (err, result) => {
-    if (err) throw new Error().message;
+  const {
+    response: { result },
+  } = await res.json();
 
-    jsonData = result;
-  });
-
-  return jsonData;
+  console.log(result[0]);
+  return result[0];
 };
 
 const useCovidStatus = () =>
-  useQuery(['covid'], fetchCovidStatus, {
-    staleTime: 3000,
-    cacheTime: 8000,
-    enabled: false,
-  });
+  useQuery<IUseCovidStatus, Error>(['covid'], fetchCovidStatus);
 
 export default useCovidStatus;
