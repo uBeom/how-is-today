@@ -1,10 +1,13 @@
 import * as S from './style';
 import { ICovidStatusItem } from './types';
 
-import useCovidStatus from '@/hooks/useCovidStatus';
+import useCountCovidStatus from '@/hooks/useCountCovidStatus';
+import useFetchCovidStatus from '@/hooks/useFetchCovidStatus';
 import COVID_STATUS_MOCK from '@/mocks/covidStatus';
 
-const CovidStatusItem = ({ data, count }: ICovidStatusItem) => {
+const CovidStatusItem = ({ data, end }: ICovidStatusItem) => {
+  const start = useCountCovidStatus(end, 2000);
+
   return (
     <S.StatusItem justifyContent='center' alignItems='center'>
       {data.icon}
@@ -13,7 +16,7 @@ const CovidStatusItem = ({ data, count }: ICovidStatusItem) => {
         fontSize='2xl'
         lineHeight='4'
         letterSpacing='normal'>
-        {count}
+        {start}
       </S.Count>
       <S.Title
         fontWeight='regular'
@@ -27,7 +30,7 @@ const CovidStatusItem = ({ data, count }: ICovidStatusItem) => {
 };
 
 const CovidStatus = () => {
-  const { isLoading, data } = useCovidStatus();
+  const { isLoading, data } = useFetchCovidStatus();
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -40,7 +43,7 @@ const CovidStatus = () => {
     ];
 
     const statusItems = COVID_STATUS_MOCK.map((data, index) => (
-      <CovidStatusItem key={index} count={covidApiData[index]} {...{ data }} />
+      <CovidStatusItem key={index} end={covidApiData[index]} {...{ data }} />
     ));
 
     return (
