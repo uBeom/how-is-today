@@ -5,15 +5,12 @@ export interface IText {
   letterSpacing: string;
 }
 
-export interface IBColor {
-  bColor: string;
+export interface IFlex {
+  justifyContent: string;
+  alignItems: string;
 }
 
-export interface ITemp {
-  fontWeight: string;
-  fontSize: string;
-  lineHeight: string;
-  letterSpacing: string;
+export interface IBColor {
   bColor: string;
 }
 
