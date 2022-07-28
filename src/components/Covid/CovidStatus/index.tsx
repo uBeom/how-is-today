@@ -6,10 +6,22 @@ import COVID_STATUS_MOCK from '@/mocks/covidStatus';
 
 const CovidStatusItem = ({ data, count }: ICovidStatusItem) => {
   return (
-    <S.StatusItem>
+    <S.StatusItem justifyContent='center' alignItems='center'>
       {data.icon}
-      <strong>{count}</strong>
-      <h3>{data.title}</h3>
+      <S.Count
+        fontWeight='regular'
+        fontSize='2xl'
+        lineHeight='4'
+        letterSpacing='normal'>
+        {count}
+      </S.Count>
+      <S.Title
+        fontWeight='regular'
+        fontSize='sm'
+        lineHeight='short'
+        letterSpacing='widest'>
+        {data.title}
+      </S.Title>
     </S.StatusItem>
   );
 };

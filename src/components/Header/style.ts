@@ -42,6 +42,7 @@ const SvgStyle = css`
 `;
 export const Item = styled.li`
   ${TextStyle};
+
   padding-bottom: 3.137254901960784%;
 
   &:last-child {
