@@ -1,7 +1,7 @@
 import * as S from './style';
 import { IGNBItem } from './type';
 
-import { GNB_MOCK } from '@/mocks/gnb';
+import GNB_MOCK from '@/mocks/gnb';
 
 const GNBItem = ({ name, src, icon }: IGNBItem) => {
   return (
@@ -21,8 +21,8 @@ const GNBItem = ({ name, src, icon }: IGNBItem) => {
 };
 
 const Header = () => {
-  const gnbItems = GNB_MOCK.map((info, index) => (
-    <GNBItem {...info} key={index} />
+  const gnbItems = GNB_MOCK.map((data, index) => (
+    <GNBItem {...data} key={index} />
   ));
 
   return (
