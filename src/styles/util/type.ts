@@ -7,8 +7,8 @@ export interface ITextBTColor {
   fontSize: string;
   lineHeight: string;
   letterSpacing: string;
-  bColor: string;
-  tColor: string;
+  $bColor: string;
+  $tColor: string;
 }
 
 export interface IText {
@@ -19,8 +19,8 @@ export interface IText {
 }
 
 export interface IBTColor {
-  bColor: string;
-  tColor: string;
+  $bColor: string;
+  $tColor: string;
 }
 
 export interface IColors {

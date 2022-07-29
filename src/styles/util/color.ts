@@ -60,8 +60,8 @@ const setColor = ({ colors }: DefaultTheme, color: string): string => {
 };
 
 export const BTColorStyle = css<IBTColor>`
-  ${({ theme, bColor, tColor }) => css`
-    background-color: ${setColor(theme, bColor)};
-    color: ${setColor(theme, tColor)};
+  ${({ theme, $bColor, $tColor }) => css`
+    background-color: ${setColor(theme, $bColor)};
+    color: ${setColor(theme, $tColor)};
   `}
 `;

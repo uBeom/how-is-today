@@ -10,11 +10,11 @@ const GNBItem = ({ name, src, icon }: IGNBItem) => {
       fontSize='md'
       lineHeight='tall'
       letterSpacing='wide'
-      tColor='blue 600'
-      bColor='gray 400'>
+      $tColor='blue 600'
+      $bColor='gray 400'>
       <S.NLink
-        tColor='blue 600'
-        bColor='gray 400'
+        $tColor='blue 600'
+        $bColor='gray 400'
         to={src}
         className={({ isActive }) => (isActive ? 'active' : undefined)}>
         {icon}
