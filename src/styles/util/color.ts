@@ -1,6 +1,6 @@
 import { css, DefaultTheme } from 'styled-components';
 
-import { IBColor, ITColor, IColors } from './type';
+import { IColors, IBTColor } from './type';
 
 const setColorBlue = (colors: IColors, value: string): string => {
   switch (value) {
@@ -59,14 +59,9 @@ const setColor = ({ colors }: DefaultTheme, color: string): string => {
   }
 };
 
-export const BColorStyle = css<IBColor>`
-  ${({ theme, bColor }) => css`
+export const BTColorStyle = css<IBTColor>`
+  ${({ theme, bColor, tColor }) => css`
     background-color: ${setColor(theme, bColor)};
-  `}
-`;
-
-export const TColorStyle = css<ITColor>`
-  ${({ theme, tColor }) => css`
     color: ${setColor(theme, tColor)};
   `}
 `;

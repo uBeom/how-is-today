@@ -1,3 +1,16 @@
+export interface IFlex {
+  justifyContent: string;
+  alignItems: string;
+}
+export interface ITextBTColor {
+  fontWeight: string;
+  fontSize: string;
+  lineHeight: string;
+  letterSpacing: string;
+  bColor: string;
+  tColor: string;
+}
+
 export interface IText {
   fontWeight: string;
   fontSize: string;
@@ -5,16 +18,8 @@ export interface IText {
   letterSpacing: string;
 }
 
-export interface IFlex {
-  justifyContent: string;
-  alignItems: string;
-}
-
-export interface IBColor {
+export interface IBTColor {
   bColor: string;
-}
-
-export interface ITColor {
   tColor: string;
 }
 
