@@ -1,10 +1,12 @@
 import styled, { css } from 'styled-components';
 
+import { FadeInUp } from '@/styles/util/animations';
 import FlexStyle from '@/styles/util/flex';
 import TextStyle from '@/styles/util/text';
 
 export const StatusList = styled.ul`
   ${FlexStyle};
+  ${FadeInUp};
 
   gap: 2.702702702702703%;
   width: 60.81081081081081%;
