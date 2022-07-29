@@ -29,7 +29,7 @@ const useCountCovidStatus = (end: string, duration: number) => {
 
   useEffect(() => {
     if (start >= endNumber) clearInterval(timerRef.current as NodeJS.Timeout);
-  }, [start]);
+  }, [start, endNumber]);
 
   return start;
 };
