@@ -5,16 +5,26 @@ const useCountCovidStatus = (end: string, duration: number) => {
   const [start, setStart] = useState(0);
   const currentNumber: { current: number } = useRef(0);
   const endNumber = Number(end);
-  const stepTime = Math.abs(Math.floor(duration / (endNumber - start)));
+  const stepTime = Math.abs(
+    Math.floor(duration / (endNumber - currentNumber.current)),
+  );
 
   useEffect(() => {
     currentNumber.current = start;
+
     timerRef.current = setInterval(() => {
-      if (endNumber - start >= 10000) currentNumber.current += 100;
+      if (endNumber - currentNumber.current >= 1000)
+        currentNumber.current += 1000;
+      else if (endNumber - currentNumber.current >= 500)
+        currentNumber.current += 500;
+      else if (endNumber - currentNumber.current >= 10)
+        currentNumber.current += 10;
       else currentNumber.current += 1;
 
       setStart(currentNumber.current);
     }, stepTime);
+
+    return () => clearInterval(timerRef.current as NodeJS.Timeout);
   }, []);
 
   useEffect(() => {
