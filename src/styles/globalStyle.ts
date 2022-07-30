@@ -22,6 +22,14 @@ const GlobalStyle = createGlobalStyle`
   svg {
     fill: ${({ theme: { colors } }) => colors.gray[200]};
   }
+
+  button {
+    border: none;
+    padding: 0;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;
