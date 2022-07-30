@@ -1,5 +1,6 @@
 import { css, DefaultTheme } from 'styled-components';
 
+import { devices } from '../device';
 import { IText } from './types';
 
 const setFontWeight = (
@@ -18,22 +19,44 @@ const setFontWeight = (
   }
 };
 
-const setFontSize = ({ fontSizes }: DefaultTheme, fontSize: string): string => {
+const setFontSize = ({ fontSizes }: DefaultTheme, fontSize: string) => {
   switch (fontSize) {
     case 'xs':
-      return fontSizes.xs;
+      return css`
+        font-size: ${fontSizes.xs};
+      `;
     case 'sm':
-      return fontSizes.sm;
+      return css`
+        font-size: ${fontSizes.sm};
+
+        @media ${devices.tablet} {
+          font-size: ${fontSizes.md};
+        }
+      `;
     case 'md':
-      return fontSizes.md;
+      return css`
+        font-size: ${fontSizes.md};
+
+        @media ${devices.tablet} {
+          font-size: ${fontSizes.lg};
+        }
+      `;
     case 'lg':
-      return fontSizes.lg;
+      return css`
+        font-size: ${fontSizes.lg};
+
+        @media ${devices.tablet} {
+          font-size: ${fontSizes.xl};
+        }
+      `;
     case 'xl':
-      return fontSizes.xl;
-    case '2xl':
-      return fontSizes['2xl'];
+      return css`
+        font-size: ${fontSizes.xl};
+      `;
     default:
-      return fontSize;
+      return css`
+        font-size: ${fontSizes['2xl']};
+      `;
   }
 };
 
@@ -54,10 +77,8 @@ const setLineHeight = (
       return lineHeights.taller;
     case '3':
       return lineHeights[3];
-    case '4':
-      return lineHeights[4];
     default:
-      return lineHeight;
+      return lineHeights[4];
   }
 };
 
@@ -72,19 +93,17 @@ const setLetterSpacing = (
       return letterSpacings.wide;
     case 'wider':
       return letterSpacings.wider;
-    case 'widest':
-      return letterSpacings.widest;
     default:
-      return letterSpacing;
+      return letterSpacings.widest;
   }
 };
 
 const TextStyle = css<IText>`
   ${({ theme, fontWeight, fontSize, lineHeight, letterSpacing }) => css`
     font-weight: ${setFontWeight(theme, fontWeight)};
-    font-size: ${setFontSize(theme, fontSize)};
     line-height: ${setLineHeight(theme, lineHeight)};
     letter-spacing: ${setLetterSpacing(theme, letterSpacing)};
+    ${setFontSize(theme, fontSize)};
   `}
 `;
 

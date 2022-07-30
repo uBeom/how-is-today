@@ -3,71 +3,58 @@ import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 import { BTColorStyle } from '@/styles/util/color';
+import FlexStyle from '@/styles/util/flex';
 import TextStyle from '@/styles/util/text';
-import { IBTColor, ITextBTColor } from '@/styles/util/type';
+import { IFlexBTColor, ITextBTColor } from '@/styles/util/types';
 
 export const Container = styled.header`
-  padding-top: 10.83333333333333%;
-  padding-bottom: 44.16666666666667%;
-  width: 17.7778%;
-
   ${({ theme: { colors } }) => css`
-    border-right: 1px solid ${colors.gray[300]};
     background-color: ${colors.gray[500]};
   `}
 `;
 
 export const GNB = styled.nav`
-  padding: 4.705882352941176% 3.137254901960784%;
+  ${FlexStyle};
+
+  padding: calc(100% * 16 / 576);
 
   ${({ theme: { colors } }) => css`
-    border-top: 1px solid ${colors.gray[300]};
     border-bottom: 1px solid ${colors.gray[300]};
   `}
 `;
 
-export const GNBList = styled.ul``;
+export const GNBList = styled.ul<{ isShowing: boolean }>`
+  padding: calc(100% * 8 / 576) 0;
 
-const ItemStyle = css<IBTColor>`
-  ${BTColorStyle};
-
-  border-radius: 4px;
-`;
-
-const SvgStyle = css`
-  ${({ theme: { colors } }) => css`
-    fill: ${colors.blue[600]};
-  `}
+  ${({ isShowing }) =>
+    isShowing
+      ? css`
+          display: block;
+        `
+      : css`
+          display: none;
+        `}
 `;
 
 export const Item = styled.li<ITextBTColor>`
   ${TextStyle};
 
-  padding-bottom: 3.137254901960784%;
-
-  &:last-child {
-    padding-bottom: 0;
-  }
-
   & .active {
-    ${ItemStyle};
+    ${BTColorStyle};
+
+    border-radius: 4px;
 
     svg {
-      ${SvgStyle};
+      ${({ theme: { colors } }) => css`
+        fill: ${colors.blue[600]};
+      `}
     }
   }
 `;
 
-export const NLink = styled(NavLink)`
-  padding: 4.602510460251046% 3.347280334728033%;
-  display: flex;
-  align-items: center;
+export const NLink = styled(NavLink)<IFlexBTColor>`
+  ${FlexStyle};
 
-  &:hover {
-    ${ItemStyle};
-
-    svg {
-      ${SvgStyle};
-    }
-  }
+  padding: calc(100% * 8 / 576) calc(100% * 16 / 576);
+  gap: calc(100% * 8 / 576);
 `;

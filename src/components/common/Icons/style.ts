@@ -2,12 +2,19 @@ import styled, { css } from 'styled-components';
 
 import { IIconStyle } from './types';
 
+import { devices } from '@/styles/device';
+
 const getSize = (size: string) => {
   switch (size) {
     case 'sm':
       return css`
         width: 1.6rem;
         height: 1.6rem;
+
+        @media ${devices.tablet} {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
       `;
     case 'md':
       return css`
