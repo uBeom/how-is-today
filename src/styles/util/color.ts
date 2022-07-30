@@ -1,6 +1,6 @@
 import { css, DefaultTheme } from 'styled-components';
 
-import { IColors, IBTColor } from './type';
+import { IColors, IBTColor } from './types';
 
 const setColorBlue = (colors: IColors, value: string): string => {
   switch (value) {

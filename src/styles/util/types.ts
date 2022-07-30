@@ -1,7 +1,8 @@
 export interface IFlex {
-  justifyContent: string;
-  alignItems: string;
+  justifyContent?: string;
+  alignItems?: string;
 }
+
 export interface ITextBTColor {
   fontWeight: string;
   fontSize: string;

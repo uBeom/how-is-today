@@ -1,6 +1,6 @@
 import { css, DefaultTheme } from 'styled-components';
 
-import { IText } from './type';
+import { IText } from './types';
 
 const setFontWeight = (
   { fontWeights }: DefaultTheme,

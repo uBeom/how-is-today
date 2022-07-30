@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { IFlex } from './type';
+import { IFlex } from './types';
 
 const setJustifyContent = (justifyContent: string) => {
   switch (justifyContent) {
@@ -37,10 +37,10 @@ const setAlignItems = (alignItems: string) => {
 };
 
 const FlexStyle = css<IFlex>`
-  ${({ justifyContent = 'flex-start', alignItems = 'stretch' }) => css`
+  ${({ justifyContent, alignItems }) => css`
     display: flex;
-    justify-content: ${setJustifyContent(justifyContent)};
-    align-items: ${setAlignItems(alignItems)};
+    justify-content: ${setJustifyContent(justifyContent as string)};
+    align-items: ${setAlignItems(alignItems as string)};
   `}
 `;
 
