@@ -10,7 +10,7 @@ const GNBItem = ({ name, src, icon }: IGNBItem) => {
   return (
     <S.Item
       fontWeight='medium'
-      fontSize='lg'
+      fontSize='md'
       lineHeight='tall'
       letterSpacing='wide'
       $tColor='blue 600'
@@ -41,12 +41,16 @@ const Header = () => {
 
   return (
     <S.Container>
-      <S.GNB flex='flex' $justifyContent='flex-end' $alignItems='center'>
-        <button type='button' onClick={handeClickMenu}>
+      <S.GNB
+        flex='flex'
+        $justifyContent='flex-end'
+        $alignItems='center'
+        {...{ isShowing }}>
+        <S.Btn type='button' onClick={handeClickMenu}>
           <Icon name='menu' size='sm' />
-        </button>
+        </S.Btn>
+        <S.GNBList {...{ isShowing }}>{gnbItems}</S.GNBList>
       </S.GNB>
-      <S.GNBList {...{ isShowing }}>{gnbItems}</S.GNBList>
     </S.Container>
   );
 };
