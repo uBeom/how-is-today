@@ -11,19 +11,19 @@ import SevereSymptomIcon from '@/components/common/Icons/Home/CoronaStatus/Sever
 
 function getIcon(name: string, size: string): JSX.Element {
   switch (name) {
-    case 'Home':
+    case 'home':
       return <HomeIcon {...{ size }} />;
-    case 'Menu':
+    case 'menu':
       return <MenuIcon {...{ size }} />;
-    case 'Settings':
+    case 'settings':
       return <SettingsIcon {...{ size }} />;
-    case 'Todo':
+    case 'todo':
       return <TodoIcon {...{ size }} />;
-    case 'Confirmation':
+    case 'confirmation':
       return <ConfirmationIcon {...{ size }} />;
-    case 'Death':
+    case 'death':
       return <DeathIcon {...{ size }} />;
-    case 'Hospital':
+    case 'hospital':
       return <HospitalIcon {...{ size }} />;
     default:
       return <SevereSymptomIcon {...{ size }} />;
