@@ -1,23 +1,24 @@
 import styled, { css } from 'styled-components';
 
-import { FadeInUp } from '@/styles/util/animations';
+import { fadeInUp } from '@/styles/util/animations';
 import FlexStyle from '@/styles/util/flex';
 import TextStyle from '@/styles/util/text';
 
 export const StatusList = styled.ul`
   ${FlexStyle};
-  ${FadeInUp};
 
   gap: 2.702702702702703%;
   width: 60.81081081081081%;
   height: 11.82432432432432%;
+  animation: ${fadeInUp} 0.5s linear;
 `;
 
 export const StatusItem = styled.li`
   ${FlexStyle};
 
   padding: 3.333333333333333%;
-  width: 21.66666666666667%;
+  /* width: 21.66666666666667%; */
+  width: calc(100% * 156 / 720);
   height: 19.44444444444444%;
   flex-direction: column;
 

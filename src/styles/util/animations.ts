@@ -1,10 +1,8 @@
-import { css } from 'styled-components';
+import { keyframes } from 'styled-components';
 
-export const FadeInUp = css`
-  animation-duration: 0.5s;
-  animation-name: FadeInUp;
+export const fadeInUp = keyframes`
 
-  @keyframes FadeInUp {
+
     from {
       opacity: 0;
       transform: translate3d(0, 32px, 0);
@@ -14,5 +12,4 @@ export const FadeInUp = css`
       opacity: 1;
       transform: translate3d(0, 0, 0);
     }
-  }
 `;
