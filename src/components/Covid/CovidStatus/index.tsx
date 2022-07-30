@@ -47,12 +47,12 @@ const CovidStatus = () => {
     ));
 
     return (
-      <section>
+      <S.Container>
         {/* heading 추가하고 readonly */}
         <S.StatusList flex='flex' $justifyContent='center' $alignItems='center'>
           {statusItems}
         </S.StatusList>
-      </section>
+      </S.Container>
     );
   }
 

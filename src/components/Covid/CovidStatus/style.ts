@@ -1,25 +1,40 @@
 import styled, { css } from 'styled-components';
 
+import { devices } from '@/styles/device';
 import { fadeInUp } from '@/styles/util/animations';
 import FlexStyle from '@/styles/util/flex';
 import TextStyle from '@/styles/util/text';
 
+export const Container = styled.section`
+  padding: 3.2rem 0;
+
+  @media ${devices.tablet} {
+    padding: 0 3.2rem;
+  }
+
+  @media ${devices.desktop} {
+    padding: 0;
+    max-width: 72rem;
+  }
+`;
+
 export const StatusList = styled.ul`
   ${FlexStyle};
 
-  gap: 2.702702702702703%;
-  width: 60.81081081081081%;
-  height: 11.82432432432432%;
+  gap: 3.2rem;
+  flex-wrap: wrap;
   animation: ${fadeInUp} 0.5s linear;
+
+  @media ${devices.tablet} {
+    flex-wrap: nowrap;
+  }
 `;
 
 export const StatusItem = styled.li`
   ${FlexStyle};
 
-  padding: 3.333333333333333%;
-  /* width: 21.66666666666667%; */
-  width: calc(100% * 156 / 720);
-  height: 19.44444444444444%;
+  padding: 1.6rem;
+  width: calc(100% * 240 / 576);
   flex-direction: column;
 
   ${({ theme: { colors } }) => css`
@@ -27,24 +42,34 @@ export const StatusItem = styled.li`
     background-color: ${colors.gray[500]};
   `}
 
-  &:hover {
-    ${({ theme: { colors } }) => css`
-      background-color: ${colors.blue[600]};
+  @media ${devices.tablet} {
+    width: calc(100% * 152 / 768);
+  }
 
-      svg {
-        ${({ theme: { colors } }) => css`
-          fill: ${colors.white};
-        `}
-      }
-    `}
+  @media ${devices.desktop} {
+    width: calc(100% * 156 / 720);
+
+    &:hover {
+      ${({ theme: { colors } }) => css`
+        background-color: ${colors.blue[600]};
+
+        svg {
+          ${({ theme: { colors } }) => css`
+            fill: ${colors.white};
+          `}
+        }
+      `}
+    }
   }
 `;
 
 const StatusItemHoverStyle = css`
-  ${StatusItem}:hover & {
-    ${({ theme: { colors } }) => css`
-      color: ${colors.white};
-    `}
+  @media ${devices.desktop} {
+    ${StatusItem}:hover & {
+      ${({ theme: { colors } }) => css`
+        color: ${colors.white};
+      `}
+    }
   }
 `;
 
