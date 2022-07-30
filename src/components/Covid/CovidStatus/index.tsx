@@ -9,7 +9,7 @@ const CovidStatusItem = ({ data, end }: ICovidStatusItem) => {
   const start = useCountCovidStatus(end, 2000);
 
   return (
-    <S.StatusItem justifyContent='center' alignItems='center'>
+    <S.StatusItem flex='flex' $justifyContent='center' $alignItems='center'>
       {data.icon}
       <S.Count
         fontWeight='regular'
@@ -49,7 +49,7 @@ const CovidStatus = () => {
     return (
       <section>
         {/* heading 추가하고 readonly */}
-        <S.StatusList justifyContent='center' alignItems='center'>
+        <S.StatusList flex='flex' $justifyContent='center' $alignItems='center'>
           {statusItems}
         </S.StatusList>
       </section>

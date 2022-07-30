@@ -1,6 +1,15 @@
 export interface IFlex {
-  justifyContent?: string;
-  alignItems?: string;
+  flex?: string;
+  $justifyContent?: string;
+  $alignItems?: string;
+}
+
+export interface IFlexBTColor {
+  flex?: string;
+  $justifyContent?: string;
+  $alignItems?: string;
+  $bColor: string;
+  $tColor: string;
 }
 
 export interface ITextBTColor {

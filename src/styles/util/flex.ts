@@ -37,10 +37,10 @@ const setAlignItems = (alignItems: string) => {
 };
 
 const FlexStyle = css<IFlex>`
-  ${({ justifyContent, alignItems }) => css`
-    display: flex;
-    justify-content: ${setJustifyContent(justifyContent as string)};
-    align-items: ${setAlignItems(alignItems as string)};
+  ${({ flex, $justifyContent, $alignItems }) => css`
+    display: ${flex};
+    justify-content: ${setJustifyContent($justifyContent as string)};
+    align-items: ${setAlignItems($alignItems as string)};
   `}
 `;
 
