@@ -54,11 +54,11 @@ export const StatusItem = styled.li`
   `}
 
   @media ${devices.tablet} {
-    width: calc(100% * 152 / 768);
+    width: calc(100% * 152 / 704);
   }
 
   @media ${devices.desktop} {
-    width: calc(100% * 156 / 720);
+    width: calc(100% * 156 / 752);
 
     &:hover {
       ${({ theme: { colors } }) => css`
@@ -88,7 +88,7 @@ export const Count = styled.strong`
   ${TextStyle};
   ${StatusItemHoverStyle};
 
-  padding-top: 2.564102564102564%;
+  padding-top: 0.8rem;
 `;
 
 export const Title = styled.h3`

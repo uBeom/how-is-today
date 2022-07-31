@@ -8,6 +8,7 @@ import { MONTHS } from '@/constants/calendar';
 const Calendar = () => {
   return (
     <S.Container>
+      {/* heading 추가하고 readonly */}
       <S.Title>{`${
         MONTHS[MyDate.getCurMonth()]
       } ${MyDate.getCurYear()}`}</S.Title>
