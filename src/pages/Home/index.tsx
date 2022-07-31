@@ -8,8 +8,10 @@ const Home = () => {
   return (
     <S.Container>
       <Calendar />
-      <CovidStatus />
-      <CovidChart />
+      <S.CovidContainer>
+        <CovidStatus />
+        <CovidChart />
+      </S.CovidContainer>
     </S.Container>
   );
 };

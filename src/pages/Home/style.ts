@@ -16,3 +16,9 @@ export const Container = styled.main`
     gap: 3.2rem;
   }
 `;
+
+export const CovidContainer = styled.div`
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  order: 1;
+`;
