@@ -1,10 +1,12 @@
 import * as S from './style';
 
-import CovidStatus from '@/components/Covid/CovidStatus';
+import Calendar from '@/components/feature/Calendar';
+import CovidStatus from '@/components/feature/Covid/CovidStatus';
 
 const Home = () => {
   return (
     <S.Container>
+      <Calendar />
       <CovidStatus />
     </S.Container>
   );
