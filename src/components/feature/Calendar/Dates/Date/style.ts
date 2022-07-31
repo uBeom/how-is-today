@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { IContainer } from './types';
+
 import { BTColorStyle } from '@/styles/util/color';
 import TextStyle from '@/styles/util/text';
 
@@ -10,7 +12,7 @@ export const Container = styled.div.attrs({
   letterSpacing: 'wider',
   $bColor: 'blue 400',
   $tColor: 'white',
-})<{ date: number; today: number }>`
+})<IContainer>`
   ${TextStyle}
   padding: 0.8rem;
   width: calc(100% / 7);
