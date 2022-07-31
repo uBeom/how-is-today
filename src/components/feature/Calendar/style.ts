@@ -3,17 +3,15 @@ import styled, { css } from 'styled-components';
 import { devices } from '@/styles/device';
 import { BTColorStyle } from '@/styles/util/color';
 import TextStyle from '@/styles/util/text';
-import { IBTColor } from '@/styles/util/types';
 
 export const Container = styled.section.attrs({
   $bColor: 'gray 500',
   $tColor: 'white',
-})<IBTColor>`
-  ${BTColorStyle}
+})`
+  ${BTColorStyle};
 
-  padding: 2.4rem 1.6rem;
+  padding: 2.4rem 3.1rem;
   width: 100%;
-  height: 300px;
 
   @media ${devices.tablet} {
     margin: 0 auto;
@@ -21,19 +19,20 @@ export const Container = styled.section.attrs({
   }
 
   @media ${devices.desktop} {
+    padding: 2.4rem 1.6rem;
     max-width: 36rem;
     width: 100%;
     order: 2;
   }
 `;
 
-export const YearMonth = styled.h3.attrs({
+export const Title = styled.h3.attrs({
   fontSize: 'sm',
   fontWeight: 'medium',
   lineHeight: 'tall',
   letterSpacing: 'wide',
 })`
-  ${TextStyle}
+  ${TextStyle};
 
   margin-bottom: 2.4rem;
   text-align: center;
