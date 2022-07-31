@@ -3,7 +3,13 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import Router from '@/router';
 
-const queryClinet = new QueryClient();
+const queryClinet = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => {
   return (

@@ -1,7 +1,10 @@
-import * as S from './style';
-import { IGNBItem } from './type';
+import { useState } from 'react';
 
-import { GNB_MOCK } from '@/mocks/gnb';
+import * as S from './style';
+import { IGNBItem } from './types';
+
+import Icon from '@/components/common/Icons';
+import GNB_MOCK from '@/mocks/gnb';
 
 const GNBItem = ({ name, src, icon }: IGNBItem) => {
   return (
@@ -9,9 +12,16 @@ const GNBItem = ({ name, src, icon }: IGNBItem) => {
       fontWeight='medium'
       fontSize='md'
       lineHeight='tall'
-      letterSpacing='wide'>
+      letterSpacing='wide'
+      $tColor='blue 600'
+      $bColor='gray 400'>
       <S.NLink
+        $tColor='blue 600'
+        $bColor='gray 400'
         to={src}
+        flex='flex'
+        $justifyContent='center'
+        $alignItems='center'
         className={({ isActive }) => (isActive ? 'active' : undefined)}>
         {icon}
         {name}
@@ -21,14 +31,25 @@ const GNBItem = ({ name, src, icon }: IGNBItem) => {
 };
 
 const Header = () => {
-  const gnbItems = GNB_MOCK.map((info, index) => (
-    <GNBItem {...info} key={index} />
+  const [isShowing, setIsShowing] = useState(false);
+
+  const handeClickMenu = () => setIsShowing(prev => !prev);
+
+  const gnbItems = GNB_MOCK.map((data, index) => (
+    <GNBItem {...data} key={index} />
   ));
-  console.log(gnbItems);
+
   return (
     <S.Container>
-      <S.GNB>
-        <S.GNBList>{gnbItems}</S.GNBList>
+      <S.GNB
+        flex='flex'
+        $justifyContent='flex-end'
+        $alignItems='center'
+        {...{ isShowing }}>
+        <S.Btn type='button' onClick={handeClickMenu}>
+          <Icon name='menu' size='sm' />
+        </S.Btn>
+        <S.GNBList {...{ isShowing }}>{gnbItems}</S.GNBList>
       </S.GNB>
     </S.Container>
   );

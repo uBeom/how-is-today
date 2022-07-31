@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
@@ -25,5 +25,5 @@ root.render(
         </Provider>
       </BrowserRouter>
     </ThemeProvider>
-  </React.StrictMode>,
+  </StrictMode>,
 );

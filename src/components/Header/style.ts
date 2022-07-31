@@ -2,70 +2,124 @@ import { NavLink } from 'react-router-dom';
 
 import styled, { css } from 'styled-components';
 
-import TextStyle from '@/styles/text';
+import { devices } from '@/styles/device';
+import { BTColorStyle } from '@/styles/util/color';
+import FlexStyle from '@/styles/util/flex';
+import TextStyle from '@/styles/util/text';
+import { IFlexBTColor, ITextBTColor } from '@/styles/util/types';
 
 export const Container = styled.header`
-  padding-top: 10.83333333333333%;
-  padding-bottom: 44.16666666666667%;
-  width: 17.7778%;
-
   ${({ theme: { colors } }) => css`
-    border-right: 1px solid ${colors.gray[300]};
     background-color: ${colors.gray[500]};
   `}
-`;
 
-export const GNB = styled.nav`
-  padding: 4.705882352941176% 3.137254901960784%;
-
-  ${({ theme: { colors } }) => css`
-    border-top: 1px solid ${colors.gray[300]};
-    border-bottom: 1px solid ${colors.gray[300]};
-  `}
-`;
-
-export const GNBList = styled.ul``;
-
-const ItemStyle = css`
-  ${({ theme: { colors } }) => css`
-    background-color: ${colors.gray[400]};
-    color: ${colors.blue[600]};
-  `}
-`;
-
-const SvgStyle = css`
-  ${({ theme: { colors } }) => css`
-    fill: ${colors.blue[600]};
-  `}
-`;
-
-export const Item = styled.li`
-  ${TextStyle};
-  padding-bottom: 3.137254901960784%;
-
-  &:last-child {
-    padding-bottom: 0;
+  @media ${devices.desktop} {
+    width: 25.6rem;
   }
+`;
+
+export const GNB = styled.nav<{
+  isShowing: boolean;
+  flex?: string;
+  $justifyContent?: string;
+  $alignItems?: string;
+}>`
+  ${FlexStyle};
+
+  padding: 1.6rem 0;
+  align-items: flex-end;
+  flex-direction: column;
+
+  ${({ isShowing }) =>
+    isShowing &&
+    css`
+      padding-bottom: 0;
+    `}
+
+  @media ${devices.desktop} {
+    padding: 0 0.8rem 0;
+    margin-top: 15.6rem;
+    margin-bottom: 67.4rem;
+
+    ${({ theme: { colors } }) => css`
+      border-top: 1px solid ${colors.gray[300]};
+      border-bottom: 1px solid ${colors.gray[300]};
+    `}
+  }
+`;
+
+export const GNBList = styled.ul<{ isShowing: boolean }>`
+  width: 100%;
+
+  ${({ isShowing }) =>
+    isShowing
+      ? css`
+          padding: 1.6rem 0 0.8rem 0;
+          display: block;
+        `
+      : css`
+          display: none;
+        `}
+
+  @media ${devices.desktop} {
+    padding-top: 0.8rem;
+    display: block;
+  }
+`;
+
+export const Btn = styled.button`
+  margin-right: 1.6rem;
+
+  @media ${devices.tablet} {
+    margin-right: 3.2rem;
+  }
+
+  @media ${devices.desktop} {
+    display: none;
+    background-color: black;
+  }
+`;
+
+export const Item = styled.li<ITextBTColor>`
+  ${TextStyle};
 
   & .active {
-    ${ItemStyle};
+    ${BTColorStyle};
+
+    border-radius: 4px;
 
     svg {
-      ${SvgStyle}
+      ${({ theme: { colors } }) => css`
+        fill: ${colors.blue[600]};
+      `}
     }
+  }
+
+  @media ${devices.desktop} {
+    margin-bottom: 0.8rem;
   }
 `;
 
-export const NLink = styled(NavLink)`
-  padding: 4.602510460251046% 3.347280334728033%;
-  display: flex;
-  align-items: center;
+export const NLink = styled(NavLink)<IFlexBTColor>`
+  ${FlexStyle};
 
-  &:hover {
-    ${ItemStyle};
+  padding: 0.8rem 1.6rem;
+  gap: 3.2rem;
 
-    svg {
-      ${SvgStyle}
+  @media ${devices.desktop} {
+    justify-content: flex-start;
+    width: 100%;
+
+    &:hover {
+      ${({ theme: { colors } }) => css`
+        ${BTColorStyle};
+
+        border-radius: 4px;
+
+        svg {
+          fill: ${colors.blue[600]};
+        }
+      `}
     }
   }
 `;

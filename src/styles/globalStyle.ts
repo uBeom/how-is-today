@@ -6,12 +6,13 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5% !important;
+    background-color: ${({ theme: { colors } }) => colors.gray[200]};
   }
 
   * {
     box-sizing: border-box !important;
     font-family: 'Noto Sans KR', sans-serif !important;
-    color: ${({ theme: { colors } }) => colors.gray[200]}
+    color: ${({ theme: { colors } }) => colors.gray[200]};
   }
 
   a {
@@ -19,7 +20,15 @@ const GlobalStyle = createGlobalStyle`
   }
 
   svg {
-    fill: ${({ theme: { colors } }) => colors.gray[200]}
+    fill: ${({ theme: { colors } }) => colors.gray[200]};
+  }
+
+  button {
+    border: none;
+    padding: 0;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 `;
 
