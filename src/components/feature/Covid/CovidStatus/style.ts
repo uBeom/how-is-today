@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { devices } from '@/styles/device';
-import { fadeInUp } from '@/styles/util/animations';
+import { fadeInUpAnimation } from '@/styles/util/animations';
 import FlexStyle from '@/styles/util/flex';
 import TextStyle from '@/styles/util/text';
 
@@ -21,10 +21,10 @@ export const Container = styled.section`
 
 export const StatusList = styled.ul`
   ${FlexStyle};
+  ${fadeInUpAnimation};
 
   gap: 3.2rem;
   flex-wrap: wrap;
-  animation: ${fadeInUp} 0.5s linear;
 
   @media ${devices.tablet} {
     margin: 0 auto;
