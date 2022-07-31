@@ -13,7 +13,8 @@ export const Container = styled.div.attrs({
   $bColor: 'blue 400',
   $tColor: 'white',
 })<IContainer>`
-  ${TextStyle}
+  ${TextStyle};
+
   padding: 0.8rem;
   width: calc(100% / 7);
   display: inline-block;
