@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { devices } from '@/styles/device';
+import { fadeInUpAnimation } from '@/styles/util/animations';
 import { BTColorStyle } from '@/styles/util/color';
 import TextStyle from '@/styles/util/text';
 
@@ -9,6 +10,7 @@ export const Container = styled.section.attrs({
   $tColor: 'white',
 })`
   ${BTColorStyle};
+  ${fadeInUpAnimation};
 
   padding: 2.4rem 3.1rem;
   width: 100%;
