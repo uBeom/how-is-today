@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import * as S from './style';
 import { ICovidStatusItem } from './types';
 
@@ -30,9 +32,12 @@ const CovidStatusItem = ({ data, end }: ICovidStatusItem) => {
 };
 
 const CovidStatus = () => {
-  const { isLoading, data } = useFetchCovidStatus();
+  const navigate = useNavigate();
+  const { isLoading, data, error } = useFetchCovidStatus();
 
   if (isLoading) return <div>Loading...</div>;
+
+  if (error) navigate('localhost:3000/notfound');
 
   if (data) {
     const covidApiData = [
