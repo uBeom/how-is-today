@@ -12,7 +12,7 @@ interface IUseCovidStatus {
   rate_severe_symptoms: string;
 }
 
-const COVID_STATUS_URL = `http://apis.data.go.kr/1790387/covid19CurrentStatusKorea/covid19CurrentStatusKoreaJason?serviceKey=${process.env.REACT_APP_CORONA_STATUS}`;
+const COVID_STATUS_URL = `http://apis.data.go.kr/1790387/covid19CurrentStatusKorea/covid19CurrentStatusKoreaJason?serviceKey=${process.env.REACT_APP_CORONA_STATUS_KEY}`;
 const fetchCovidStatus = async (): Promise<IUseCovidStatus> => {
   const res = await fetch(COVID_STATUS_URL);
   const {
