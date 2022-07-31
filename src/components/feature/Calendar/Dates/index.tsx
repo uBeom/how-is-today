@@ -1,5 +1,4 @@
 import Date from './Date';
-import * as S from './style';
 
 import { MyDate } from '@/components/feature/Calendar/myDate';
 
@@ -21,7 +20,7 @@ const Dates = () => {
       return <Date key={date} date='' today={MyDate.getCurDate()} />;
     });
 
-  return <S.Container>{dates}</S.Container>;
+  return <div>{dates}</div>;
 };
 
 export default Dates;
