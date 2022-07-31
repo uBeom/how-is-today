@@ -16,10 +16,8 @@ const setColorBlue = (colors: IColors, value: string): string => {
       return colors.blue[400];
     case '500':
       return colors.blue[500];
-    case '600':
-      return colors.blue[600];
     default:
-      return '';
+      return colors.blue[600];
   }
 };
 
@@ -35,10 +33,8 @@ const setColorGray = (colors: IColors, value: string): string => {
       return colors.gray[300];
     case '400':
       return colors.gray[400];
-    case '500':
-      return colors.gray[500];
     default:
-      return '';
+      return colors.gray[500];
   }
 };
 
@@ -52,10 +48,8 @@ const setColor = ({ colors }: DefaultTheme, color: string): string => {
       return setColorGray(colors, value);
     case 'black':
       return colors.black;
-    case 'white':
-      return colors.white;
     default:
-      return '';
+      return colors.white;
   }
 };
 

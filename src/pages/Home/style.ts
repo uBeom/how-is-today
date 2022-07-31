@@ -9,6 +9,10 @@ export const Container = styled.main`
 
   @media ${devices.desktop} {
     padding: 3.2rem;
-    width: 118.4rem;
+    width: 120.8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 3.2rem;
   }
 `;

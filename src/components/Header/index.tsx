@@ -4,7 +4,7 @@ import * as S from './style';
 import { IGNBItem } from './types';
 
 import Icon from '@/components/common/Icons';
-import GNB_MOCK from '@/mocks/gnb';
+import { GNB } from '@/constants/gnb';
 
 const GNBItem = ({ name, src, icon }: IGNBItem) => {
   return (
@@ -35,9 +35,7 @@ const Header = () => {
 
   const handeClickMenu = () => setIsShowing(prev => !prev);
 
-  const gnbItems = GNB_MOCK.map((data, index) => (
-    <GNBItem {...data} key={index} />
-  ));
+  const gnbItems = GNB.map((data, index) => <GNBItem {...data} key={index} />);
 
   return (
     <S.Container>

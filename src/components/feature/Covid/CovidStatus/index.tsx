@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 import { ICovidStatusItem } from './types';
 
+import { COVID_STATUS } from '@/constants/covidStatus';
 import useCountCovidStatus from '@/hooks/useCountCovidStatus';
 import useFetchCovidStatus from '@/hooks/useFetchCovidStatus';
-import COVID_STATUS_MOCK from '@/mocks/covidStatus';
 
 const CovidStatusItem = ({ data, end }: ICovidStatusItem) => {
   const start = useCountCovidStatus(end, 2000);
@@ -47,7 +47,7 @@ const CovidStatus = () => {
       data.cnt_deaths,
     ];
 
-    const statusItems = COVID_STATUS_MOCK.map((data, index) => (
+    const statusItems = COVID_STATUS.map((data, index) => (
       <CovidStatusItem key={index} end={covidApiData[index]} {...{ data }} />
     ));
 

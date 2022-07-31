@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { devices } from '@/styles/device';
-import { fadeInUp } from '@/styles/util/animations';
+import { fadeInUpAnimation } from '@/styles/util/animations';
 import FlexStyle from '@/styles/util/flex';
 import TextStyle from '@/styles/util/text';
 
@@ -9,24 +9,35 @@ export const Container = styled.section`
   padding: 3.2rem 0;
 
   @media ${devices.tablet} {
-    padding: 0 3.2rem;
+    padding: 3.2rem 0;
   }
 
   @media ${devices.desktop} {
     padding: 0;
-    max-width: 72rem;
+    order: 1;
+    grid-column: 1 / 3;
   }
 `;
 
 export const StatusList = styled.ul`
   ${FlexStyle};
+  ${fadeInUpAnimation};
 
   gap: 3.2rem;
   flex-wrap: wrap;
-  animation: ${fadeInUp} 0.5s linear;
 
   @media ${devices.tablet} {
+    margin: 0 auto;
+    padding: 3.2rem 0;
+    width: calc(100% * 704 / 768);
+    justify-content: space-between;
     flex-wrap: nowrap;
+  }
+
+  @media ${devices.desktop} {
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
 `;
 
