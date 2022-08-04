@@ -1,16 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
-function getCountValue(endNumber: number, currentNumber: number) {
-  const MANY_REMAINDER_VALUE = 1000;
-  const A_FEW_REMAINDER_VALUE = 500;
-  const FEW_REAMINDER_VALUE = 10;
+import { REMAINDER_VALUE } from '@/constants/covidStatus';
 
+function getCountValue(endNumber: number, currentNumber: number) {
   const reaminderValue = endNumber - currentNumber;
 
-  if (reaminderValue >= MANY_REMAINDER_VALUE) return MANY_REMAINDER_VALUE;
-  else if (reaminderValue >= A_FEW_REMAINDER_VALUE)
-    return A_FEW_REMAINDER_VALUE;
-  else if (reaminderValue >= FEW_REAMINDER_VALUE) return FEW_REAMINDER_VALUE;
+  if (reaminderValue >= REMAINDER_VALUE.MANY) return REMAINDER_VALUE.MANY;
+  else if (reaminderValue >= REMAINDER_VALUE.AFEW) return REMAINDER_VALUE.AFEW;
+  else if (reaminderValue >= REMAINDER_VALUE.FEW) return REMAINDER_VALUE.FEW;
 
   return 1;
 }

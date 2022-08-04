@@ -6,3 +6,9 @@ export const COVID_STATUS = [
   { icon: <Icon name='hospital' size='lg' />, title: '신규 입원' },
   { icon: <Icon name='death' size='lg' />, title: '일일 사망' },
 ];
+
+export const REMAINDER_VALUE = {
+  MANY: 1000,
+  AFEW: 500,
+  FEW: 10,
+};
