@@ -84,6 +84,7 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'no-shadow': 'off',
     'no-else-return': 'off',
+    'import/extensions': 'off',
   },
   env: {
     browser: true,
