@@ -18,6 +18,8 @@ export const Container = styled.main`
 `;
 
 export const CovidContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   grid-column: 1 / 3;
   grid-row: 1 / 3;
   order: 1;
