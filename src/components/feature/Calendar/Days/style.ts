@@ -12,6 +12,7 @@ export const Days = styled.div.attrs({
 })`
   ${TextStyle};
 
+  margin-bottom: 0.8rem;
   padding: 0.4rem;
   width: calc(100% / 7);
   display: inline-block;

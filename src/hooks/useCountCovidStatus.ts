@@ -1,5 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { REMAINDER_VALUE } from '@/constants/covidStatus';
+
+function getCountValue(endNumber: number, currentNumber: number) {
+  const reaminderValue = endNumber - currentNumber;
+
+  if (reaminderValue >= REMAINDER_VALUE.MANY) return REMAINDER_VALUE.MANY;
+  else if (reaminderValue >= REMAINDER_VALUE.AFEW) return REMAINDER_VALUE.AFEW;
+  else if (reaminderValue >= REMAINDER_VALUE.FEW) return REMAINDER_VALUE.FEW;
+
+  return 1;
+}
+
 const useCountCovidStatus = (end: string, duration: number) => {
   const timerRef: { current: NodeJS.Timeout | null } = useRef(null);
   const [start, setStart] = useState(0);
@@ -13,13 +25,7 @@ const useCountCovidStatus = (end: string, duration: number) => {
     currentNumber.current = start;
 
     timerRef.current = setInterval(() => {
-      if (endNumber - currentNumber.current >= 1000)
-        currentNumber.current += 1000;
-      else if (endNumber - currentNumber.current >= 500)
-        currentNumber.current += 500;
-      else if (endNumber - currentNumber.current >= 10)
-        currentNumber.current += 10;
-      else currentNumber.current += 1;
+      currentNumber.current += getCountValue(endNumber, -currentNumber.current);
 
       setStart(currentNumber.current);
     }, stepTime);

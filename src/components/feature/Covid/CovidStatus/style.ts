@@ -9,13 +9,11 @@ export const Container = styled.section`
   padding: 3.2rem 0;
 
   @media ${devices.tablet} {
-    padding: 3.2rem 0;
+    padding: 0;
   }
 
   @media ${devices.desktop} {
     padding: 0;
-    order: 1;
-    grid-column: 1 / 3;
   }
 `;
 

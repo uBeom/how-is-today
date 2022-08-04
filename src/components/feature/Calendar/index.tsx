@@ -1,9 +1,9 @@
 import Dates from './Dates';
 import Days from './Days';
-import { MyDate } from './myDate';
 import * as S from './style';
 
 import { MONTHS } from '@/constants/calendar';
+import { MyDate } from '@/helper/myDate';
 
 const Calendar = () => {
   return (
