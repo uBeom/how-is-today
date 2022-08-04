@@ -4,7 +4,7 @@ import { devices } from '@/styles/device';
 import TextStyle from '@/styles/util/text';
 
 export const Container = styled.section`
-  padding: 2.4rem 3.2rem;
+  padding: 2.4rem 1.6rem;
   width: 100%;
   order: 3;
 
@@ -24,12 +24,14 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h2.attrs({
-  fontWeight: 'regular',
-  fontSize: 'md',
+  fontWeight: 'medium',
+  fontSize: 'lg',
   lineHeight: '3',
   letterSpacing: 'wider',
 })`
   ${TextStyle};
+  margin-bottom: 2.4rem;
+  text-align: center;
 `;
 
 export const Chart = styled.canvas`
