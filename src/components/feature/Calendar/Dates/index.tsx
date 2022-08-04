@@ -1,6 +1,6 @@
 import Date from './Date';
 
-import { MyDate } from '@/components/feature/Calendar/myDate';
+import { MyDate } from '@/helper/myDate';
 
 const Dates = () => {
   const dates = Array.from({
