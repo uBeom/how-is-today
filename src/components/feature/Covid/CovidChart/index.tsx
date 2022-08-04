@@ -6,6 +6,7 @@ import { ChartData, ChartOptions } from 'chart.js';
 
 import * as S from './style';
 
+import { MyDate } from '@/helper/myDate';
 import useFetchCovidChart from '@/hooks/useFetchCovidChart';
 
 const options: ChartOptions<'bar'> = {
@@ -17,7 +18,7 @@ const options: ChartOptions<'bar'> = {
 };
 
 const datas: ChartData<'bar', number[], string> = {
-  labels: ['6일전', '5일전', '4일전', '3일전', '2일전', '1일전', '오늘'],
+  labels: MyDate.getWeekDate(),
   datasets: [
     {
       type: 'bar',
@@ -25,6 +26,8 @@ const datas: ChartData<'bar', number[], string> = {
       backgroundColor: '#2196f3',
       data: [],
       borderWidth: 1,
+      borderRadius: 4,
+      barThickness: 25,
     },
   ],
 };
