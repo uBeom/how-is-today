@@ -3,6 +3,12 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import Router from '@/router';
 
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
+
 const queryClinet = new QueryClient({
   defaultOptions: {
     queries: {
