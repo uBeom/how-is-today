@@ -18,9 +18,14 @@ export const Container = styled.main`
 `;
 
 export const CovidContainer = styled.div`
+  margin-bottom: 3.2rem;
   display: flex;
   flex-direction: column;
   grid-column: 1 / 3;
   grid-row: 1 / 3;
   order: 1;
+
+  @media ${devices.desktop} {
+    margin-bottom: 0;
+  }
 `;
