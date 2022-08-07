@@ -12,15 +12,20 @@ export const Container = styled.main`
     width: 120.8rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 3.2rem;
   }
 `;
 
 export const CovidContainer = styled.div`
+  margin-bottom: 3.2rem;
   display: flex;
   flex-direction: column;
   grid-column: 1 / 3;
   grid-row: 1 / 3;
   order: 1;
+
+  @media ${devices.desktop} {
+    margin-bottom: 0;
+  }
 `;

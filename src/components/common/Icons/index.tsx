@@ -8,6 +8,9 @@ import ConfirmationIcon from '@/components/common/Icons/Home/CoronaStatus/Confir
 import DeathIcon from '@/components/common/Icons/Home/CoronaStatus/DeathIcon';
 import HospitalIcon from '@/components/common/Icons/Home/CoronaStatus/HospitalIcon';
 import SevereSymptomIcon from '@/components/common/Icons/Home/CoronaStatus/SevereSymptomIcon';
+import FrownIcon from '@/components/common/Icons/ParticulateMatter/FrownIcon';
+import MehIcon from '@/components/common/Icons/ParticulateMatter/MehIcon';
+import SmileIcon from '@/components/common/Icons/ParticulateMatter/SmileIcon';
 
 function getIcon(name: string, size: string): JSX.Element {
   switch (name) {
@@ -25,6 +28,12 @@ function getIcon(name: string, size: string): JSX.Element {
       return <DeathIcon {...{ size }} />;
     case 'hospital':
       return <HospitalIcon {...{ size }} />;
+    case 'frown':
+      return <FrownIcon {...{ size }} />;
+    case 'meh':
+      return <MehIcon {...{ size }} />;
+    case 'smile':
+      return <SmileIcon {...{ size }} />;
     default:
       return <SevereSymptomIcon {...{ size }} />;
   }

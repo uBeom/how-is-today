@@ -28,7 +28,7 @@ export interface IUseCoivdChart {
   mmddhh: string;
 }
 
-const COVID_CHART_URL = `http://apis.data.go.kr/1790387/covid19CurrentStatusConfirmations/covid19CurrentStatusConfirmationsJson?ServiceKey=${process.env.REACT_APP_CORONA_KEY}`;
+const COVID_CHART_URL = `http://apis.data.go.kr/1790387/covid19CurrentStatusConfirmations/covid19CurrentStatusConfirmationsJson?ServiceKey=${process.env.REACT_APP_DATA_API_KEY}`;
 
 const fetchCovidChart = async (): Promise<IUseCoivdChart> => {
   const res = await fetch(COVID_CHART_URL);
