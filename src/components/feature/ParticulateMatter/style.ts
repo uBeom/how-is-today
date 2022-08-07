@@ -19,6 +19,8 @@ export const Container = styled.section`
 
   @media ${devices.desktop} {
     margin: 0;
+    width: 100%;
+    order: 3;
   }
 `;
 
@@ -41,7 +43,7 @@ export const CurrentLocation = styled.dt.attrs({
 })`
   ${TextStyle};
 
-  margin-bottom: 1.6rem;
+  margin-bottom: 0.8rem;
 `;
 
 export const Region = styled.dd.attrs({
@@ -51,13 +53,52 @@ export const Region = styled.dd.attrs({
   letterSpacing: 'widest',
 })`
   ${TextStyle};
+
+  margin-bottom: 0.8rem;
 `;
 
 export const Time = styled.time.attrs({
   fontWeight: 'medium',
-  fontSize: 'lg',
+  fontSize: 'md',
   lineHeight: 'short',
   letterSpacing: 'widest',
 })`
   ${TextStyle};
+`;
+
+export const ParticulateMatters = styled.div`
+  margin-top: 3.2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const PM10 = styled.div.attrs({
+  fontWeight: 'regular',
+  fontSize: 'md',
+  lineHeight: 'short',
+  letterSpacing: 'widest',
+})`
+  ${TextStyle};
+
+  gap: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PM2dot5 = styled.div.attrs({
+  fontWeight: 'regular',
+  fontSize: 'md',
+  lineHeight: 'short',
+  letterSpacing: 'widest',
+})`
+  ${TextStyle};
+
+  gap: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
