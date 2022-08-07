@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 
-const colors = {
+export const colors = {
   blue: {
     50: '#f2f9fe',
     100: '#e3f2fd',
@@ -22,13 +22,13 @@ const colors = {
   white: '#fff',
 };
 
-const fontWeights = {
+export const fontWeights = {
   regular: '400',
   medium: '500',
   bold: '700',
 };
 
-const fontSizes = {
+export const fontSizes = {
   xs: '1rem',
   sm: '1.2rem',
   md: '1.4rem',
@@ -37,7 +37,7 @@ const fontSizes = {
   '2xl': '2.4rem',
 };
 
-const lineHeights = {
+export const lineHeights = {
   shorter: '1.2rem',
   short: '1.5rem',
   base: '1.6rem',
@@ -47,18 +47,18 @@ const lineHeights = {
   '4': '3.6rem',
 };
 
-const letterSpacings = {
+export const letterSpacings = {
   normal: '0',
   wide: '0.01rem',
   wider: '0.015em',
   widest: '0.04em',
 };
 
-export type ColorsType = typeof colors;
-export type FontSizesType = typeof fontSizes;
-export type FontWeightsType = typeof fontWeights;
-export type LineHeightsType = typeof lineHeights;
-export type LetterSpacingsType = typeof letterSpacings;
+export const devices = {
+  mobile: `(min-width: 375px)`,
+  tablet: `(min-width: 768px)`,
+  desktop: `(min-width: 1440px)`,
+};
 
 const theme: DefaultTheme = {
   colors,
@@ -66,6 +66,7 @@ const theme: DefaultTheme = {
   fontWeights,
   lineHeights,
   letterSpacings,
+  devices,
 };
 
 export default theme;

@@ -1,12 +1,20 @@
 import 'styled-components';
 
 import {
-  ColorsType,
-  FontSizesType,
-  FontWeightsType,
-  LineHeightsType,
-  LetterSpacingsType,
+  colors,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+  letterSpacings,
+  devices,
 } from '@/styles/theme';
+
+type ColorsType = typeof colors;
+type FontSizesType = typeof fontSizes;
+type FontWeightsType = typeof fontWeights;
+type LineHeightsType = typeof lineHeights;
+type LetterSpacingsType = typeof letterSpacings;
+type DevicesType = typeof devices;
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -15,5 +23,6 @@ declare module 'styled-components' {
     fontWeights: FontWeightsType;
     lineHeights: LineHeightsType;
     letterSpacings: LetterSpacingsType;
+    devices: DevicesType;
   }
 }
