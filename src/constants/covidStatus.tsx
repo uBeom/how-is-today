@@ -11,4 +11,5 @@ export const REMAINDER_VALUE = {
   MANY: 1000,
   AFEW: 500,
   FEW: 10,
+  VERY_FEW: 1,
 };

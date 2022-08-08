@@ -9,7 +9,7 @@ function getCountValue(endNumber: number, currentNumber: number) {
   else if (reaminderValue >= REMAINDER_VALUE.AFEW) return REMAINDER_VALUE.AFEW;
   else if (reaminderValue >= REMAINDER_VALUE.FEW) return REMAINDER_VALUE.FEW;
 
-  return 1;
+  return REMAINDER_VALUE.VERY_FEW;
 }
 
 const useCountCovidStatus = (end: string, duration: number) => {
@@ -35,7 +35,7 @@ const useCountCovidStatus = (end: string, duration: number) => {
 
   useEffect(() => {
     if (start >= endNumber) clearInterval(timerRef.current as NodeJS.Timeout);
-  }, [start, endNumber]);
+  }, [start]);
 
   return start;
 };
