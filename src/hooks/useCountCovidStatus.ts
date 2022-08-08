@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { REMAINDER_VALUE } from '@/constants/covidStatus';
+enum REMAINDER_VALUE {
+  MANY = 1000,
+  AFEW = 500,
+  FEW = 10,
+  VERY_FEW = 1,
+}
 
 function getCountValue(endNumber: number, currentNumber: number) {
   const reaminderValue = endNumber - currentNumber;
