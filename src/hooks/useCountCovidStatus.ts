@@ -25,7 +25,7 @@ const useCountCovidStatus = (end: string, duration: number) => {
     currentNumber.current = start;
 
     timerRef.current = setInterval(() => {
-      currentNumber.current += getCountValue(endNumber, -currentNumber.current);
+      currentNumber.current += getCountValue(endNumber, currentNumber.current);
 
       setStart(currentNumber.current);
     }, stepTime);
