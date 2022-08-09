@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import * as S from './style';
 
 import Icon from '@/components/common/Icons';
-import { dfsXYConv } from '@/helper/myCoords';
 
 const { kakao } = window;
 const geocoder = new kakao.maps.services.Geocoder();
@@ -57,7 +56,6 @@ const ParticulateMatter = () => {
     const data = await fetchParticulate(result);
     setData({ ...data });
   };
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(pos => {
       geocoder.coord2RegionCode(
@@ -65,8 +63,7 @@ const ParticulateMatter = () => {
         pos.coords.latitude,
         callback,
       );
-
-      console.log(dfsXYConv(pos.coords.latitude, pos.coords.longitude));
+      // console.log(dfsXYConv(pos.coords.latitude, pos.coords.longitude));
     });
   }, []);
 
