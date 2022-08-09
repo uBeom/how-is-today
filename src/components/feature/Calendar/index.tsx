@@ -10,7 +10,7 @@ const Calendar = () => {
     <S.Container>
       {/* heading 추가하고 readonly */}
       <S.Title>{`${
-        MONTHS[MyDate.getCurMonth()]
+        MONTHS[MyDate.getCurMonth() - 1]
       } ${MyDate.getCurYear()}`}</S.Title>
       <Days />
       <Dates />
