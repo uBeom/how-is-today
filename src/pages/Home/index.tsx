@@ -4,6 +4,7 @@ import Calendar from '@/components/feature/Calendar';
 import CovidChart from '@/components/feature/Covid/CovidChart';
 import CovidStatus from '@/components/feature/Covid/CovidStatus';
 import ParticulateMatter from '@/components/feature/ParticulateMatter';
+import Weather from '@/components/feature/Weather';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <CovidChart />
       </S.CovidContainer>
       <ParticulateMatter />
+      <Weather />
     </S.Container>
   );
 };
